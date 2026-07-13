@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 277.02 341.66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5284b4;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #5284b4;
+        stroke-width: 10px;
+      }
+
+      .cls-3 {
+        fill: #7d4e24;
+      }
+    </style>
+  </defs>
+  <title>raisins</title>
+  <g id="Calque_2" data-name="Calque 2">
+    <g id="Calque_1-2" data-name="Calque 1">
+      <g>
+        <ellipse class="cls-1" cx="163.45" cy="261.06" rx="71.25" ry="80.59"/>
+        <ellipse class="cls-1" cx="66.67" cy="173.05" rx="66.67" ry="74.62"/>
+        <ellipse class="cls-1" cx="209.48" cy="116.68" rx="67.53" ry="81.75"/>
+        <polyline class="cls-2" points="42.1 131.71 115.41 57.68 150.31 189.83"/>
+        <ellipse class="cls-1" cx="150.31" cy="77.65" rx="16.82" ry="6.78" transform="translate(28.93 195.5) rotate(-71.48)"/>
+        <ellipse class="cls-1" cx="75" cy="99.25" rx="6.78" ry="16.82" transform="translate(-34.51 158.26) rotate(-81.24)"/>
+        <path class="cls-3" d="M103.17,55.17"/>
+        <g>
+          <line class="cls-2" x1="183.65" y1="93.55" x2="114.65" y2="51.55"/>
+          <line class="cls-2" x1="116.65" y1="55.51" x2="91.82" y2="2.32"/>
+        </g>
+        <ellipse class="cls-1" cx="148.24" cy="182.76" rx="14.35" ry="6.78" transform="matrix(0.96, -0.29, 0.29, 0.96, -46.15, 50.14)"/>
+        <polygon class="cls-1" points="110.84 55.17 83.01 2.32 86.51 2.32 96.21 0 110.84 55.17"/>
+      </g>
+    </g>
+  </g>
+</svg>

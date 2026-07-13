@@ -1,0 +1,55 @@
+[build]
+  publish = "."
+  # Regenerates the menu HTML from content/menu-food.json (Decap CMS source of truth).
+  # Runs automatically when the site is connected to a Git repo; ignored by plain CLI deploys.
+  command = "node scripts/build-menu.mjs"
+
+# Pretty URLs — Netlify strips .html from the address bar (302 → clean URL)
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
+# Legacy .html URLs from earlier deploys → clean (one-time 301)
+[[redirects]]
+  from = "/home.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/site.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/script.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

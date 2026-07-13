@@ -1,0 +1,12 @@
+{
+  "name": "oyster-river-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "River & Oyster — statický web (EN/CZ) + Decap CMS pro menu.",
+  "scripts": {
+    "build": "node scripts/build-menu.mjs",
+    "build:menu": "node scripts/build-menu.mjs",
+    "cms": "npx decap-server",
+    "dev": "python serve.py 5173"
+  }
+}

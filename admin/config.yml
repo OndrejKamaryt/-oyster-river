@@ -1,0 +1,54 @@
+# Decap CMS — konfigurace
+# Produkce: git-gateway (potřebuje web v GitHub repu + Netlify Identity/OAuth).
+# Lokální zkouška: `local_backend: true` + `npx decap-server`.
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'CMS: přidána položka do {{collection}}'
+    update: 'CMS: úprava {{collection}}'
+    delete: 'CMS: smazána položka z {{collection}}'
+
+# Lokální backend — editace bez GitHubu/loginu (jen na localhost, přes `npx decap-server`)
+local_backend: true
+
+locale: 'cs'
+media_folder: 'images/menu'
+public_folder: '/images/menu'
+
+# Sdílená definice jedné položky menu (dvojjazyčně)
+_item_fields: &item_fields
+  - { label: 'Název (CZ)', name: cs_name, widget: string }
+  - { label: 'Name (EN)', name: en_name, widget: string }
+  - { label: 'Popis / ingredience (CZ)', name: cs_desc, widget: string, required: false }
+  - { label: 'Description / ingredients (EN)', name: en_desc, widget: string, required: false }
+  - { label: 'Cena (jen číslo, např. 225 nebo 1 050; degustace nechte prázdné)', name: price, widget: string, required: false }
+
+collections:
+  - name: menu
+    label: 'Menu'
+    files:
+      - name: food
+        label: 'Jídlo — menu'
+        file: 'content/menu-food.json'
+        format: json
+        description: 'Ceny píšete jen číslem → zobrazí se jako „225 CZK“ (EN) a „225 Kč“ (CZ). Degustační menu ceny nemá — pole nechte prázdné.'
+        fields:
+          - { label: 'Ústřice (à la carte)', name: oysters, widget: list, label_singular: 'ústřice', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Malá jídla', name: small, widget: list, label_singular: 'malé jídlo', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Velká jídla', name: main, widget: list, label_singular: 'velké jídlo', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Dezerty', name: desserts, widget: list, label_singular: 'dezert', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Degustační menu', name: tasting, widget: list, label_singular: 'chod', summary: '{{fields.cs_name}}', fields: *item_fields }
+          - { label: 'Bar — ústřice', name: bar_oysters, widget: list, label_singular: 'ústřice', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Bar — jídla', name: bar_dishes, widget: list, label_singular: 'jídlo', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+
+      - name: drink
+        label: 'Nápoje — menu'
+        file: 'content/menu-drink.json'
+        format: json
+        description: 'Víno a champagne po sklenkách. Cena jen číslem.'
+        fields:
+          - { label: 'Víno — bílé po sklenkách', name: wine_white, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Víno — červené & rosé po sklenkách', name: wine_red, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Champagne po sklenkách', name: champagne, widget: list, label_singular: 'champagne', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }

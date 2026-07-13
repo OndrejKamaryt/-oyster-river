@@ -1,0 +1,16 @@
+{
+  "wine_white": [
+    { "cs_name": "Gurdau Pinot Blanc Vinohrádky 2022", "en_name": "Gurdau Pinot Blanc Vinohrádky 2022", "cs_desc": "Morava", "en_desc": "Moravia", "price": "415" },
+    { "cs_name": "Huber Grüner Veltliner Terrassen BIO 2023", "en_name": "Huber Grüner Veltliner Terrassen BIO 2023", "cs_desc": "Traisental", "en_desc": "Traisental", "price": "250" },
+    { "cs_name": "La Chablisienne Chablis Le Finage AOC 2020", "en_name": "La Chablisienne Chablis Le Finage AOC 2020", "cs_desc": "Chablis", "en_desc": "Chablis", "price": "330" }
+  ],
+  "wine_red": [
+    { "cs_name": "Domaine de L'Arlot Côte de Nuits-Villages 2022", "en_name": "Domaine de L'Arlot Côte de Nuits-Villages 2022", "cs_desc": "Burgundsko", "en_desc": "Burgundy", "price": "590" },
+    { "cs_name": "Château d'Esclans Rock Angel Rosé 2022", "en_name": "Château d'Esclans Rock Angel Rosé 2022", "cs_desc": "Provence", "en_desc": "Provence", "price": "349" }
+  ],
+  "champagne": [
+    { "cs_name": "Ruinart Blanc de Blancs, N.V.", "en_name": "Ruinart Blanc de Blancs, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "650" },
+    { "cs_name": "Ruinart Rosé Brut, N.V.", "en_name": "Ruinart Rosé Brut, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "650" },
+    { "cs_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "en_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "490" }
+  ]
+}
