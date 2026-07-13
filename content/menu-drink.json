@@ -12,5 +12,11 @@
     { "cs_name": "Ruinart Blanc de Blancs, N.V.", "en_name": "Ruinart Blanc de Blancs, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "650" },
     { "cs_name": "Ruinart Rosé Brut, N.V.", "en_name": "Ruinart Rosé Brut, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "650" },
     { "cs_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "en_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "490" }
+  ],
+  "cocktails": [
+    { "name": "Umi 海", "style_cs": "Osvěžující · lehký · návykový", "style_en": "Long · fresh · light", "ing_cs": "Garage 22 River & Oyster gin • angrešt • hrozno • gyokuro • kombu řasa", "ing_en": "Garage 22 River & Oyster gin • gooseberry • grapes • gyokuro • kombu seaweed", "price": "345" },
+    { "name": "Ringo りんご", "style_cs": "Plný · tělnatý · sladký", "style_en": "Short · sweet · bold", "ing_cs": "Jamajský rum 12y omytý máslem • sirup z kvásku a jablek • vlašský ořech", "ing_en": "Butter-washed Jamaican rum 12y • apple-sourdough syrup • walnut", "price": "345" },
+    { "name": "Inaka 田舎", "style_cs": "Ovocné · sladkokyselé · svěží", "style_en": "Fruity · sweet-sour · fresh", "ing_cs": "Malinová vodka • jahoda • bezinkový likér • limeta • sirup ze slaměnky • mléčná syrovátka", "ing_en": "Raspberry vodka • strawberry • elderflower liqueur • lime • immortelle syrup • milk whey", "price": "345" },
+    { "name": "Kaju-en 果樹園", "style_cs": "Nealkoholický · aperitivní", "style_en": "Non-alcoholic · aperitif", "ing_cs": "Pai Mu Tan • meruňka • náš nealkoholický vermut • oleo saccharum • verjus", "ing_en": "Pai Mu Tan • apricot syrup • house non-alcoholic vermouth • oleo saccharum • verjus", "price": "345" }
   ]
 }

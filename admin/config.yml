@@ -47,8 +47,20 @@ collections:
         label: 'Nápoje — menu'
         file: 'content/menu-drink.json'
         format: json
-        description: 'Víno a champagne po sklenkách. Cena jen číslem.'
+        description: 'Víno a champagne po sklenkách + signature koktejly. Cena jen číslem.'
         fields:
           - { label: 'Víno — bílé po sklenkách', name: wine_white, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
           - { label: 'Víno — červené & rosé po sklenkách', name: wine_red, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
           - { label: 'Champagne po sklenkách', name: champagne, widget: list, label_singular: 'champagne', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - label: 'Signature koktejly'
+            name: cocktails
+            widget: list
+            label_singular: 'koktejl'
+            summary: '{{fields.name}} — {{fields.price}}'
+            fields:
+              - { label: 'Název (stejný pro EN i CZ, např. „Umi 海")', name: name, widget: string }
+              - { label: 'Styl (CZ, např. „Osvěžující · lehký · návykový")', name: style_cs, widget: string, required: false }
+              - { label: 'Style (EN)', name: style_en, widget: string, required: false }
+              - { label: 'Ingredience (CZ, oddělovač •)', name: ing_cs, widget: string }
+              - { label: 'Ingredients (EN, separator •)', name: ing_en, widget: string }
+              - { label: 'Cena (jen číslo)', name: price, widget: string, required: false }

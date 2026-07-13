@@ -2,12 +2,12 @@
 /**
  * build-menu.mjs — renders menu sections from JSON data into the static HTML.
  * Source of truth: content/menu-food.json, content/menu-drink.json (edited via Decap CMS).
- * Keeps the menu in the static HTML (SEO) while data stays editable.
- * Run: `node scripts/build-menu.mjs`
+ * Keeps the menu in the static HTML (SEO) while data stays editable. Run: `node scripts/build-menu.mjs`
  *
- * Two targeting modes per section:
- *   { id: 'oysters' }        -> first <ul class="menu-list"> inside <article id="oysters">
- *   { marker: 'bar_dishes' } -> content between <!--m:bar_dishes--> ... <!--/m:bar_dishes-->
+ * Targeting per section:
+ *   { id: 'oysters' }               -> first <ul class="menu-list"> inside <article id="oysters">
+ *   { marker: 'bar_dishes' }        -> content between <!--m:bar_dishes--> ... <!--/m:bar_dishes-->
+ *   { marker: 'cocktails', kind: 'cocktail' } -> card layout instead of <li> list
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -24,13 +24,14 @@ const FOOD_SECTIONS = {
 };
 const DRINK_SECTIONS = {
   wine_white: { marker: 'wine_white' }, wine_red: { marker: 'wine_red' }, champagne: { id: 'champagne' },
+  cocktails: { marker: 'cocktails', kind: 'cocktail' },
 };
 
 const JOBS = [
-  { data: foodData,  file: 'food.html',    name: 'en_name', desc: 'en_desc', unit: 'CZK', sections: FOOD_SECTIONS },
-  { data: foodData,  file: 'cz/food.html', name: 'cs_name', desc: 'cs_desc', unit: 'Kč',  sections: FOOD_SECTIONS },
-  { data: drinkData, file: 'drink.html',   name: 'en_name', desc: 'en_desc', unit: 'CZK', sections: DRINK_SECTIONS },
-  { data: drinkData, file: 'cz/drink.html', name: 'cs_name', desc: 'cs_desc', unit: 'Kč',  sections: DRINK_SECTIONS },
+  { data: foodData,  file: 'food.html',    lang: 'en', unit: 'CZK', sections: FOOD_SECTIONS },
+  { data: foodData,  file: 'cz/food.html', lang: 'cs', unit: 'Kč',  sections: FOOD_SECTIONS },
+  { data: drinkData, file: 'drink.html',   lang: 'en', unit: 'CZK', sections: DRINK_SECTIONS },
+  { data: drinkData, file: 'cz/drink.html', lang: 'cs', unit: 'Kč',  sections: DRINK_SECTIONS },
 ];
 
 // escape raw text for HTML (editors type "&" and quotes; we store raw, output entities)
@@ -39,18 +40,34 @@ const esc = s => String(s ?? '')
   .replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;');
 
+// --- renderers ---
 function li(item, job) {
-  const name = esc(item[job.name]);
-  const desc = esc(item[job.desc]);
+  const name = esc(item[job.lang === 'en' ? 'en_name' : 'cs_name']);
+  const desc = esc(item[job.lang === 'en' ? 'en_desc' : 'cs_desc']);
   const small = desc ? ` <small>${desc}</small>` : '';
   const price = (item.price !== undefined && item.price !== '')
     ? `<span class="price">${esc(item.price)} ${job.unit}</span>` : '';
   return `<li><span class="item">${name}${small}</span>${price}</li>`;
 }
-
-function renderInner(items, job, liPad) {
+function renderItems(items, job, liPad) {
   const closePad = ' '.repeat(liPad.length - 2);
   return '\n' + items.map(it => liPad + li(it, job)).join('\n') + '\n' + closePad;
+}
+
+function card(item, job) {
+  const style = esc(item[job.lang === 'en' ? 'style_en' : 'style_cs']);
+  const name = esc(item.name);
+  const ing = esc(item[job.lang === 'en' ? 'ing_en' : 'ing_cs']);
+  const price = (item.price !== undefined && item.price !== '')
+    ? `\n            <p class="card__price">${esc(item.price)} ${job.unit}</p>` : '';
+  return `          <div class="card">
+            <span class="card__no">${style}</span>
+            <h3 class="card__title">${name}</h3>
+            <p class="card__body">${ing}</p>${price}
+          </div>`;
+}
+function renderCards(items, job) {
+  return '\n' + items.map(c => card(c, job)).join('\n');
 }
 
 let changed = 0, warnings = 0;
@@ -61,15 +78,18 @@ for (const job of JOBS) {
   for (const [key, target] of Object.entries(job.sections)) {
     const items = job.data[key];
     if (!items) { console.warn(`  ! ${job.file}: no data for "${key}"`); warnings++; continue; }
+    const render = target.kind === 'cocktail'
+      ? () => renderCards(items, job)
+      : (pad) => renderItems(items, job, pad);
 
     if (target.id) {
       const re = new RegExp('(<article[^>]*id="' + target.id + '"[^>]*>[\\s\\S]*?<ul class="menu-list"[^>]*>)([\\s\\S]*?)(</ul>)');
       if (!re.test(html)) { console.warn(`  ! ${job.file}: article#${target.id} not found`); warnings++; continue; }
-      html = html.replace(re, (_m, open, _inner, close) => open + renderInner(items, job, '          ') + close);
+      html = html.replace(re, (_m, open, _i, close) => open + render('          ') + close);
     } else {
       const re = new RegExp('(<!--m:' + target.marker + '-->)([\\s\\S]*?)(<!--/m:' + target.marker + '-->)');
       if (!re.test(html)) { console.warn(`  ! ${job.file}: marker ${target.marker} not found`); warnings++; continue; }
-      html = html.replace(re, (_m, open, _inner, close) => open + renderInner(items, job, '              ') + close);
+      html = html.replace(re, (_m, open, _i, close) => open + render('              ') + close);
     }
   }
 
