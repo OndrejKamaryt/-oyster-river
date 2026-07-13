@@ -1,47 +1,233 @@
 {
   "oysters": [
-    { "cs_name": "Gillardeau", "en_name": "Gillardeau oyster", "cs_desc": "citron · zest vinaigrette", "en_desc": "lemon · zest vinaigrette", "price": "225" },
-    { "cs_name": "Josephine", "en_name": "Josephine oyster", "cs_desc": "citron · zest vinaigrette", "en_desc": "lemon · zest vinaigrette", "price": "195" },
-    { "cs_name": "Chef Oyster", "en_name": "Chef Oyster", "cs_desc": "grilovaná ústřice · emulze z jiker · grep · kopr", "en_desc": "grilled oyster · roe emulsion · grapefruit · dill", "price": "265" }
+    {
+      "cs_name": "Gillardeau",
+      "en_name": "Gillardeau oyster",
+      "cs_desc": "citron · zest vinaigrette",
+      "en_desc": "lemon · zest vinaigrette",
+      "price": "225"
+    },
+    {
+      "cs_name": "Josephine",
+      "en_name": "Josephine oyster",
+      "cs_desc": "citron · zest vinaigrette",
+      "en_desc": "lemon · zest vinaigrette",
+      "price": "195"
+    },
+    {
+      "cs_name": "Chef Oyster",
+      "en_name": "Chef Oyster",
+      "cs_desc": "grilovaná ústřice · emulze z jiker · grep · kopr",
+      "en_desc": "grilled oyster · roe emulsion · grapefruit · dill",
+      "price": "265"
+    }
   ],
   "small": [
-    { "cs_name": "Barevná rajčata", "en_name": "Heirloom tomatoes", "cs_desc": "bílé jahody · bez · řasy · čerstvý sýr · aquavit", "en_desc": "white strawberries · elderflower · seaweed · fresh cheese · aquavit", "price": "425" },
-    { "cs_name": "Marinovaný candát", "en_name": "Marinated pike-perch", "cs_desc": "hruška · verjus · verbena · rebarbora · uzený olej", "en_desc": "pear · verjus · verbena · rhubarb · smoked oil", "price": "495" },
-    { "cs_name": "Crudo ze sivena", "en_name": "Arctic char crudo", "cs_desc": "uzený úhoř · ponzu ze svatojánských ořechů · jablko · ořechový olej · kaviár · křen", "en_desc": "smoked eel · green-walnut ponzu · apple · walnut oil · caviar · horseradish", "price": "585" },
-    { "cs_name": "Rybí consommé", "en_name": "Fish consommé", "cs_desc": "XO · žloutek · vegeta · rybí nudle", "en_desc": "XO · egg yolk · vegeta · fish noodles", "price": "485" }
+    {
+      "cs_name": "Barevná rajčata",
+      "en_name": "Heirloom tomatoes",
+      "cs_desc": "bílé jahody · bez · řasy · čerstvý sýr · aquavit",
+      "en_desc": "white strawberries · elderflower · seaweed · fresh cheese · aquavit",
+      "price": "425"
+    },
+    {
+      "cs_name": "Marinovaný candát",
+      "en_name": "Marinated pike-perch",
+      "cs_desc": "hruška · verjus · verbena · rebarbora · uzený olej",
+      "en_desc": "pear · verjus · verbena · rhubarb · smoked oil",
+      "price": "495"
+    },
+    {
+      "cs_name": "Crudo ze sivena",
+      "en_name": "Arctic char crudo",
+      "cs_desc": "uzený úhoř · ponzu ze svatojánských ořechů · jablko · ořechový olej · kaviár · křen",
+      "en_desc": "smoked eel · green-walnut ponzu · apple · walnut oil · caviar · horseradish",
+      "price": "585"
+    },
+    {
+      "cs_name": "Rybí consommé",
+      "en_name": "Fish consommé",
+      "cs_desc": "XO · žloutek · vegeta · rybí nudle",
+      "en_desc": "XO · egg yolk · vegeta · fish noodles",
+      "price": "485"
+    }
   ],
   "main": [
-    { "cs_name": "Kváskové těstoviny", "en_name": "Sourdough pasta", "cs_desc": "pórek · comté · žitné miso · čerstvý hrášek · jogurt", "en_desc": "leek · Comté · rye miso · fresh peas · yoghurt", "price": "625" },
-    { "cs_name": "Sumec", "en_name": "Catfish", "cs_desc": "lardo · citron · sabayon z račího másla · mladá kukuřice · hnědé máslo s vanilkou · chřest", "en_desc": "lardo · lemon · crayfish-butter sabayon · young corn · vanilla brown butter · asparagus", "price": "895" },
-    { "cs_name": "Jeseter", "en_name": "Sturgeon", "cs_desc": "rybí garum · sherry ocet · libeček · cuketa · brioche · paštika z jater jesetera · kaviár", "en_desc": "fish garum · sherry vinegar · lovage · courgette · brioche · sturgeon-liver pâté · caviar", "price": "1 050" },
-    { "cs_name": "Divoká kachna", "en_name": "Wild duck", "cs_desc": "stařené prso na kosti · játra a srdce · krk · petržel · rybíz · raviola s kachními žaludky · medvědí česnek", "en_desc": "aged breast on the bone · liver and heart · neck · parsley · currant · duck-gizzard raviolo · wild garlic", "price": "1 150" }
+    {
+      "cs_name": "Kváskové těstoviny",
+      "en_name": "Sourdough pasta",
+      "cs_desc": "pórek · comté · žitné miso · čerstvý hrášek · jogurt",
+      "en_desc": "leek · Comté · rye miso · fresh peas · yoghurt",
+      "price": "625"
+    },
+    {
+      "cs_name": "Sumec",
+      "en_name": "Catfish",
+      "cs_desc": "lardo · citron · sabayon z račího másla · mladá kukuřice · hnědé máslo s vanilkou · chřest",
+      "en_desc": "lardo · lemon · crayfish-butter sabayon · young corn · vanilla brown butter · asparagus",
+      "price": "895"
+    },
+    {
+      "cs_name": "Jeseter",
+      "en_name": "Sturgeon",
+      "cs_desc": "rybí garum · sherry ocet · libeček · cuketa · brioche · paštika z jater jesetera · kaviár",
+      "en_desc": "fish garum · sherry vinegar · lovage · courgette · brioche · sturgeon-liver pâté · caviar",
+      "price": "1 050"
+    },
+    {
+      "cs_name": "Divoká kachna",
+      "en_name": "Wild duck",
+      "cs_desc": "stařené prso na kosti · játra a srdce · krk · petržel · rybíz · raviola s kachními žaludky · medvědí česnek",
+      "en_desc": "aged breast on the bone · liver and heart · neck · parsley · currant · duck-gizzard raviolo · wild garlic",
+      "price": "1 150"
+    }
   ],
   "desserts": [
-    { "cs_name": "Letní borůvky & podmáslí", "en_name": "Summer blueberries & buttermilk", "cs_desc": "smrk · custard · oves", "en_desc": "spruce · custard · oats", "price": "325" },
-    { "cs_name": "Jahody & černý bez", "en_name": "Strawberries & elderflower", "cs_desc": "kefír · rebarbora · francouzská oplatka", "en_desc": "kefir · rhubarb · French wafer", "price": "325" }
+    {
+      "cs_name": "Letní borůvky & podmáslí",
+      "en_name": "Summer blueberries & buttermilk",
+      "cs_desc": "smrk · custard · oves",
+      "en_desc": "spruce · custard · oats",
+      "price": "325"
+    },
+    {
+      "cs_name": "Jahody & černý bez",
+      "en_name": "Strawberries & elderflower",
+      "cs_desc": "kefír · rebarbora · francouzská oplatka",
+      "en_desc": "kefir · rhubarb · French wafer",
+      "price": "325"
+    }
   ],
   "tasting": [
-    { "cs_name": "Grilovaný kváskový flatbread", "en_name": "Grilled sourdough flatbread", "cs_desc": "farmářské máslo s řasou · rybí kůže", "en_desc": "farm butter with seaweed · fish skin", "price": "" },
-    { "cs_name": "Oyster shot", "en_name": "Oyster shot", "cs_desc": "bez · rajčatová voda · saké", "en_desc": "elderflower · tomato water · sake", "price": "" },
-    { "cs_name": "Chef Oyster", "en_name": "Chef Oyster", "cs_desc": "grilovaná ústřice · emulze z jiker · grep · kopr", "en_desc": "grilled oyster · roe emulsion · grapefruit · dill", "price": "" },
-    { "cs_name": "Marinovaný candát", "en_name": "Marinated pike-perch", "cs_desc": "hruška · verjus · verbena · rebarbora · uzený olej", "en_desc": "pear · verjus · verbena · rhubarb · smoked oil", "price": "" },
-    { "cs_name": "Rybí consommé", "en_name": "Fish consommé", "cs_desc": "XO · žloutek · vegeta · rybí nudle", "en_desc": "XO · egg yolk · vegeta · fish noodles", "price": "" },
-    { "cs_name": "Divoká kachna", "en_name": "Wild duck", "cs_desc": "stařené prso na kosti · játra a srdce · šťovík · rybíz · raviola s kachními žaludky · medvědí česnek", "en_desc": "aged breast on the bone · liver and heart · sorrel · currant · duck-gizzard raviolo · wild garlic", "price": "" },
-    { "cs_name": "Broskev & bílý čaj", "en_name": "Peach & white tea", "cs_desc": "citronový gel · zázvor · meduňkový olej", "en_desc": "lemon gel · ginger · lemon-balm oil", "price": "" },
-    { "cs_name": "Jahody & černý bez", "en_name": "Strawberries & elderflower", "cs_desc": "kefír · rebarbora · francouzská oplatka", "en_desc": "kefir · rhubarb · French wafer", "price": "" },
-    { "cs_name": "Loupák", "en_name": "Sweet poppy-seed roll", "cs_desc": "mák · máslo · med · pyl", "en_desc": "poppy seed · butter · honey · pollen", "price": "" },
-    { "cs_name": "Perla", "en_name": "Pearl", "cs_desc": "bílá čokoláda · citrusy · beluga kaviár", "en_desc": "white chocolate · citrus · Beluga caviar", "price": "" }
+    {
+      "cs_name": "Grilovaný kváskový flatbread",
+      "en_name": "Grilled sourdough flatbread",
+      "cs_desc": "farmářské máslo s řasou · rybí kůže",
+      "en_desc": "farm butter with seaweed · fish skin",
+      "price": ""
+    },
+    {
+      "cs_name": "Oyster shot",
+      "en_name": "Oyster shot",
+      "cs_desc": "bez · rajčatová voda · saké",
+      "en_desc": "elderflower · tomato water · sake",
+      "price": ""
+    },
+    {
+      "cs_name": "Chef Oyster",
+      "en_name": "Chef Oyster",
+      "cs_desc": "grilovaná ústřice · emulze z jiker · grep · kopr",
+      "en_desc": "grilled oyster · roe emulsion · grapefruit · dill",
+      "price": ""
+    },
+    {
+      "cs_name": "Marinovaný candát",
+      "en_name": "Marinated pike-perch",
+      "cs_desc": "hruška · verjus · verbena · rebarbora · uzený olej",
+      "en_desc": "pear · verjus · verbena · rhubarb · smoked oil",
+      "price": ""
+    },
+    {
+      "cs_name": "Rybí consommé",
+      "en_name": "Fish consommé",
+      "cs_desc": "XO · žloutek · vegeta · rybí nudle",
+      "en_desc": "XO · egg yolk · vegeta · fish noodles",
+      "price": ""
+    },
+    {
+      "cs_name": "Divoká kachna",
+      "en_name": "Wild duck",
+      "cs_desc": "stařené prso na kosti · játra a srdce · šťovík · rybíz · raviola s kachními žaludky · medvědí česnek",
+      "en_desc": "aged breast on the bone · liver and heart · sorrel · currant · duck-gizzard raviolo · wild garlic",
+      "price": ""
+    },
+    {
+      "cs_name": "Broskev & bílý čaj",
+      "en_name": "Peach & white tea",
+      "cs_desc": "citronový gel · zázvor · meduňkový olej",
+      "en_desc": "lemon gel · ginger · lemon-balm oil",
+      "price": ""
+    },
+    {
+      "cs_name": "Jahody & černý bez",
+      "en_name": "Strawberries & elderflower",
+      "cs_desc": "kefír · rebarbora · francouzská oplatka",
+      "en_desc": "kefir · rhubarb · French wafer",
+      "price": ""
+    },
+    {
+      "cs_name": "Loupák",
+      "en_name": "Sweet poppy-seed roll",
+      "cs_desc": "mák · máslo · med · pyl",
+      "en_desc": "poppy seed · butter · honey · pollen",
+      "price": ""
+    },
+    {
+      "cs_name": "Perla",
+      "en_name": "Pearl",
+      "cs_desc": "bílá čokoláda · citrusy · beluga kaviár",
+      "en_desc": "white chocolate · citrus · Beluga caviar",
+      "price": ""
+    }
   ],
   "bar_oysters": [
-    { "cs_name": "Gillardeau", "en_name": "Gillardeau oyster", "cs_desc": "citron · zest vinaigrette", "en_desc": "lemon · zest vinaigrette", "price": "195" },
-    { "cs_name": "Josephine", "en_name": "Josephine oyster", "cs_desc": "citron · zest vinaigrette", "en_desc": "lemon · zest vinaigrette", "price": "225" },
-    { "cs_name": "Chef Oyster", "en_name": "Chef Oyster", "cs_desc": "grilovaná ústřice · emulze z jiker · grep · kopr", "en_desc": "grilled oyster · roe emulsion · grapefruit · dill", "price": "265" }
+    {
+      "cs_name": "Gillardeau",
+      "en_name": "Gillardeau oyster",
+      "cs_desc": "citron · zest vinaigrette",
+      "en_desc": "lemon · zest vinaigrette",
+      "price": "195"
+    },
+    {
+      "cs_name": "Josephine",
+      "en_name": "Josephine oyster",
+      "cs_desc": "citron · zest vinaigrette",
+      "en_desc": "lemon · zest vinaigrette",
+      "price": "225"
+    },
+    {
+      "cs_name": "Chef Oyster",
+      "en_name": "Chef Oyster",
+      "cs_desc": "grilovaná ústřice · emulze z jiker · grep · kopr",
+      "en_desc": "grilled oyster · roe emulsion · grapefruit · dill",
+      "price": "265"
+    }
   ],
   "bar_dishes": [
-    { "cs_name": "Tempura z denní ryby", "en_name": "Tempura of the day's fish", "cs_desc": "„vegeta“ · citrus kosho majonéza · fenykl", "en_desc": "\"vegeta\" · citrus kosho mayonnaise · fennel", "price": "425" },
-    { "cs_name": "Uzená rybí bříška", "en_name": "Smoked fish bellies", "cs_desc": "bernská omáčka · kapary z medvědího česneku · estragon", "en_desc": "Béarnaise · wild-garlic capers · tarragon", "price": "425" },
-    { "cs_name": "Smažené koblížky s uzeným úhořem", "en_name": "Fried doughnuts with smoked eel", "cs_desc": "kyselé houby · umami majonéza · pažitka", "en_desc": "pickled mushrooms · umami mayonnaise · chives", "price": "485" },
-    { "cs_name": "Grilované Wagyu", "en_name": "Grilled Wagyu", "cs_desc": "letní lanýž · hovězí máslo · zelený pepř · bílé kimchi · bezové kosho", "en_desc": "summer truffle · beef butter · green pepper · white kimchi · elderflower kosho", "price": "995" },
-    { "cs_name": "Grilovaná wafle", "en_name": "Grilled waffle", "cs_desc": "modrý sýr · pampeliškový med · černý bez", "en_desc": "blue cheese · dandelion honey · elderberry", "price": "345" }
+    {
+      "cs_name": "Tempura z denní ryby",
+      "en_name": "Tempura of the day's fish",
+      "cs_desc": "„vegeta“ · citrus kosho majonéza · fenykl",
+      "en_desc": "\"vegeta\" · citrus kosho mayonnaise · fennel",
+      "price": "425"
+    },
+    {
+      "cs_name": "Uzená rybí bříška",
+      "en_name": "Smoked fish bellies",
+      "cs_desc": "bernská omáčka · kapary z medvědího česneku · estragon",
+      "en_desc": "Béarnaise · wild-garlic capers · tarragon",
+      "price": "425"
+    },
+    {
+      "cs_name": "Smažené koblížky s uzeným úhořem",
+      "en_name": "Fried doughnuts with smoked eel",
+      "cs_desc": "kyselé houby · umami majonéza · pažitka",
+      "en_desc": "pickled mushrooms · umami mayonnaise · chives",
+      "price": "485"
+    },
+    {
+      "cs_name": "Grilované Wagyu",
+      "en_name": "Grilled Wagyu",
+      "cs_desc": "letní lanýž · hovězí máslo · zelený pepř · bílé kimchi · bezové kosho",
+      "en_desc": "summer truffle · beef butter · green pepper · white kimchi · elderflower kosho",
+      "price": "995"
+    },
+    {
+      "cs_name": "Grilovaná wafle",
+      "en_name": "Grilled waffle",
+      "cs_desc": "modrý sýr · pampeliškový med · černý bez",
+      "en_desc": "blue cheese · dandelion honey · elderberry",
+      "price": "345"
+    }
   ]
 }
