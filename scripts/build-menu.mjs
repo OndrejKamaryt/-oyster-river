@@ -24,6 +24,7 @@ const FOOD_SECTIONS = {
 };
 const DRINK_SECTIONS = {
   wine_white: { marker: 'wine_white' }, wine_red: { marker: 'wine_red' }, champagne: { id: 'champagne' },
+  classics: { marker: 'classics', kind: 'cocktail' },
   cocktails: { marker: 'cocktails', kind: 'cocktail' },
 };
 
@@ -60,8 +61,9 @@ function card(item, job) {
   const ing = esc(item[job.lang === 'en' ? 'ing_en' : 'ing_cs']);
   const price = (item.price !== undefined && item.price !== '')
     ? `\n            <p class="card__price">${esc(item.price)} ${job.unit}</p>` : '';
-  return `          <div class="card">
-            <span class="card__no">${style}</span>
+  // classics carry no style descriptor — skip the label rather than emit an empty span
+  const label = style ? `\n            <span class="card__no">${style}</span>` : '';
+  return `          <div class="card">${label}
             <h3 class="card__title">${name}</h3>
             <p class="card__body">${ing}</p>${price}
           </div>`;

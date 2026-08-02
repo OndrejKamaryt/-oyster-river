@@ -277,7 +277,9 @@ body.home .brand-mark img.brand-logo {
   height: 48px;
   width: auto;
   display: block;
-  filter: invert(1) brightness(1.15) contrast(0.9);
+  /* brightness(0) first: neutralises the source colour so the tint below is
+     independent of the artwork (symbols ship navy, the old lockup was black) */
+  filter: brightness(0) invert(1) brightness(1.15) contrast(0.9);
   opacity: 0.92;
 }
 
@@ -507,7 +509,7 @@ body.home .home-footer > div:first-child { color: var(--c-champagne); letter-spa
 .topbar__brand img.brand-logo {
   height: 38px;
   width: auto;
-  filter: invert(1) sepia(0.18) hue-rotate(-12deg) brightness(1.1) contrast(0.9);
+  filter: brightness(0) invert(1) sepia(0.18) hue-rotate(-12deg) brightness(1.1) contrast(0.9);
   opacity: 0.92;
   transition: opacity .35s;
 }
@@ -1306,7 +1308,7 @@ body.home .lang-switch--home { position: fixed; top: 2.5rem; right: 2.5rem; z-in
   height: 56px;
   width: auto;
   display: block;
-  filter: invert(1) sepia(0.18) hue-rotate(-12deg) brightness(1.1) contrast(0.9);
+  filter: brightness(0) invert(1) sepia(0.18) hue-rotate(-12deg) brightness(1.1) contrast(0.9);
   opacity: 0.92;
 }
 

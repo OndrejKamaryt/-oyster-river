@@ -13,6 +13,12 @@
     { "cs_name": "Ruinart Rosé Brut, N.V.", "en_name": "Ruinart Rosé Brut, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "650" },
     { "cs_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "en_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "490" }
   ],
+  "classics": [
+    { "name": "White Negroni", "style_cs": "", "style_en": "", "ing_cs": "Gin Tanqueray N 10 • Suze • Dolin Blanc Vermouth de Chambéry • bílá broskev", "ing_en": "Tanqueray No. Ten gin • Suze • Dolin Blanc Vermouth de Chambéry • white peach", "price": "345" },
+    { "name": "Negroni", "style_cs": "", "style_en": "", "ing_cs": "Garage 22 Summer gin • Dolin Rouge Vermouth de Chambéry • Campari • jahody • černý čaj", "ing_en": "Garage 22 Summer gin • Dolin Rouge Vermouth de Chambéry • Campari • strawberry • black tea", "price": "345" },
+    { "name": "Espresso Martini", "style_cs": "", "style_en": "", "ing_cs": "Beluga vodka • Gloria Single Origin Coffee liqueur • espresso • Marlenka", "ing_en": "Beluga vodka • Gloria Single Origin Coffee liqueur • espresso • Marlenka honey cake", "price": "345" },
+    { "name": "Pickled Martini", "style_cs": "", "style_en": "", "ing_cs": "fat washed gin • kořeněný infuzovaný vermut • solný roztok • nálev z nakládané zeleniny • cibulka", "ing_en": "fat washed gin • infused spiced vermouth • saline solution • pickled juice • onion", "price": "345" }
+  ],
   "cocktails": [
     { "name": "Umi 海", "style_cs": "Osvěžující · lehký · návykový", "style_en": "Long · fresh · light", "ing_cs": "Garage 22 River & Oyster gin • angrešt • hrozno • gyokuro • kombu řasa", "ing_en": "Garage 22 River & Oyster gin • gooseberry • grapes • gyokuro • kombu seaweed", "price": "345" },
     { "name": "Ringo りんご", "style_cs": "Plný · tělnatý · sladký", "style_en": "Short · sweet · bold", "ing_cs": "Jamajský rum 12y omytý máslem • sirup z kvásku a jablek • vlašský ořech", "ing_en": "Butter-washed Jamaican rum 12y • apple-sourdough syrup • walnut", "price": "345" },
