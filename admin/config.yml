@@ -1,4 +1,4 @@
-# Decap CMS — konfigurace
+# Decap CMS - konfigurace
 # Produkce: git-gateway (potřebuje web v GitHub repu + Netlify Identity/OAuth).
 # Lokální zkouška: `local_backend: true` + `npx decap-server`.
 
@@ -10,7 +10,7 @@ backend:
     update: 'CMS: úprava {{collection}}'
     delete: 'CMS: smazána položka z {{collection}}'
 
-# Lokální backend — editace bez GitHubu/loginu (jen na localhost, přes `npx decap-server`)
+# Lokální backend - editace bez GitHubu/loginu (jen na localhost, přes `npx decap-server`)
 local_backend: true
 
 locale: 'cs'
@@ -30,37 +30,37 @@ collections:
     label: 'Menu'
     files:
       - name: food
-        label: 'Jídlo — menu'
+        label: 'Jídlo - menu'
         file: 'content/menu-food.json'
         format: json
-        description: 'Ceny píšete jen číslem → zobrazí se jako „225 CZK“ (EN) a „225 Kč“ (CZ). Degustační menu ceny nemá — pole nechte prázdné.'
+        description: 'Ceny píšete jen číslem → zobrazí se jako „225 CZK“ (EN) a „225 Kč“ (CZ). Degustační menu ceny nemá - pole nechte prázdné.'
         fields:
-          - { label: 'Ústřice (à la carte)', name: oysters, widget: list, label_singular: 'ústřice', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
-          - { label: 'Malá jídla', name: small, widget: list, label_singular: 'malé jídlo', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
-          - { label: 'Velká jídla', name: main, widget: list, label_singular: 'velké jídlo', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
-          - { label: 'Dezerty', name: desserts, widget: list, label_singular: 'dezert', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Ústřice (à la carte)', name: oysters, widget: list, label_singular: 'ústřice', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Malá jídla', name: small, widget: list, label_singular: 'malé jídlo', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Velká jídla', name: main, widget: list, label_singular: 'velké jídlo', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Dezerty', name: desserts, widget: list, label_singular: 'dezert', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
           - { label: 'Degustační menu', name: tasting, widget: list, label_singular: 'chod', summary: '{{fields.cs_name}}', fields: *item_fields }
-          - { label: 'Bar — ústřice', name: bar_oysters, widget: list, label_singular: 'ústřice', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
-          - { label: 'Bar — jídla', name: bar_dishes, widget: list, label_singular: 'jídlo', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Bar - ústřice', name: bar_oysters, widget: list, label_singular: 'ústřice', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Bar - jídla', name: bar_dishes, widget: list, label_singular: 'jídlo', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
 
       - name: drink
-        label: 'Nápoje — menu'
+        label: 'Nápoje - menu'
         file: 'content/menu-drink.json'
         format: json
         description: 'Víno a champagne po sklenkách + signature koktejly. Cena jen číslem.'
         fields:
-          - { label: 'Víno — bílé po sklenkách', name: wine_white, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
-          - { label: 'Víno — červené & rosé po sklenkách', name: wine_red, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
-          - { label: 'Champagne po sklenkách', name: champagne, widget: list, label_singular: 'champagne', summary: '{{fields.cs_name}} — {{fields.price}}', fields: *item_fields }
+          - { label: 'Víno - bílé po sklenkách', name: wine_white, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Víno - červené & rosé po sklenkách', name: wine_red, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Champagne po sklenkách', name: champagne, widget: list, label_singular: 'champagne', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
           - label: 'Klasické koktejly'
             name: classics
             widget: list
             label_singular: 'koktejl'
-            summary: '{{fields.name}} — {{fields.price}}'
+            summary: '{{fields.name}} - {{fields.price}}'
             fields:
               - { label: 'Název (stejný pro EN i CZ)', name: name, widget: string }
-              - { label: 'Styl (CZ) — u klasik se nechává prázdné', name: style_cs, widget: string, required: false }
-              - { label: 'Style (EN) — u klasik se nechává prázdné', name: style_en, widget: string, required: false }
+              - { label: 'Styl (CZ) - u klasik se nechává prázdné', name: style_cs, widget: string, required: false }
+              - { label: 'Style (EN) - u klasik se nechává prázdné', name: style_en, widget: string, required: false }
               - { label: 'Ingredience (CZ, oddělovač •)', name: ing_cs, widget: string }
               - { label: 'Ingredients (EN, separator •)', name: ing_en, widget: string }
               - { label: 'Cena (jen číslo)', name: price, widget: string, required: false }
@@ -69,7 +69,7 @@ collections:
             name: cocktails
             widget: list
             label_singular: 'koktejl'
-            summary: '{{fields.name}} — {{fields.price}}'
+            summary: '{{fields.name}} - {{fields.price}}'
             fields:
               - { label: 'Název (stejný pro EN i CZ, např. „Umi 海")', name: name, widget: string }
               - { label: 'Styl (CZ, např. „Osvěžující · lehký · návykový")', name: style_cs, widget: string, required: false }
