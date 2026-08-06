@@ -439,10 +439,10 @@ body.home .home-footer > div:first-child { color: var(--c-champagne); letter-spa
   body.home .p-line { stroke-width: 2.4; opacity: 0.5; }
 
   /* Larger, readable labels; hide subs (they overflow) */
-  body.home .p-label { font-size: 18px; opacity: 0.92; }
+  body.home .p-label { font-size: 20px; opacity: 0.92; }
   body.home .p-label-sub { display: none; }
   body.home .p-star:hover .p-label,
-  body.home .p-star.is-hover .p-label { font-size: 20px; }
+  body.home .p-star.is-hover .p-label { font-size: 22px; }
   body.home .p-star-halo { opacity: 0.22; }
 
   body.home .brand-mark { top: 1.4rem; left: 1.4rem; }
@@ -460,7 +460,7 @@ body.home .home-footer > div:first-child { color: var(--c-champagne); letter-spa
 @media (max-width: 480px) {
   body.home .pleiades { width: 180vw; }
   body.home .p-line { stroke-width: 2.8; opacity: 0.55; }
-  body.home .p-label { font-size: 17px; }
+  body.home .p-label { font-size: 19px; }
   body.home .brand-mark img.brand-logo { height: 32px; }
 }
 
