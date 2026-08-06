@@ -40,7 +40,7 @@
   </nav>
   <div class="topbar__actions">
     <div class="lang-switch" aria-label="Language"><span class="lang-switch__opt is-active">EN</span><span class="lang-switch__sep">/</span><a class="lang-switch__opt" href="/cz/book">CZ</a></div>
-    <a href="#book-a-table" class="btn btn--sm topbar__cta">Book a table</a>
+    <a href="#book-a-table" class="btn btn--sm topbar__cta" data-booking>Book a table</a>
   </div>
   <button class="topbar__burger" type="button" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -62,13 +62,13 @@
 <main>
 
   <section class="page-hero page-hero--image">
-    <div class="page-hero__bg" style="background-image:url(images/about-header-img.jpg); background-position: center;"></div>
+    <div class="page-hero__bg" style="background-image:url(images/hero-book-kitchen.jpg); background-position: center;"></div>
     <div class="wrap">
       <p class="page-hero__eyebrow">Section 01 · Book</p>
       <h1 class="page-hero__title">An evening worth reserving</h1>
       <p class="page-hero__lede">An intimate room in Prague's Old Town for oysters, freshwater fish and champagne. Reserve your table for lunch or dinner from Tuesday to Saturday.</p>
       <div class="page-hero__cta" style="margin-top:1.6rem;">
-        <a href="#book-a-table" class="btn">Book a table</a>
+        <a href="#book-a-table" class="btn" data-booking>Book a table</a>
       </div>
     </div>
   </section>
@@ -93,7 +93,7 @@
             <p>Use the online reservation widget for lunch or dinner, Tuesday to Saturday. For special requests, allergies or seating notes, add a short message during booking.</p>
             <p class="mt-2">For groups of seven or more, see <a href="/private-dining">private dining</a>.</p>
             <div class="mt-3">
-              <a href="https://www.restu.cz/en/widget-beta/?source=https%3A%2F%2Foyster-river-prague.netlify.app&amp;restaurant_id=17806" target="_blank" rel="noopener" class="btn">Open booking system</a>
+              <a href="https://noona.app/en/fruitsdemersro/reserve" target="_blank" rel="noopener" class="btn" data-booking>Open booking system</a>
             </div>
           </div>
           <aside class="callout">
@@ -137,11 +137,27 @@
   <section class="cta-strip">
     <div class="wrap">
       <h2>An evening worth reserving</h2>
-      <a href="#book-a-table" class="btn">Book a table</a>
+      <a href="#book-a-table" class="btn" data-booking>Book a table</a>
     </div>
   </section>
 
 </main>
+
+<!-- Booking modal — Noona widget. src is set by script.js on first open. -->
+<div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <h2 class="modal__title" id="bookingModalTitle">Book a table</h2>
+      <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
+    </div>
+    <div class="modal__body">
+      <iframe title="Reservation — River &amp; Oyster"
+              data-src="https://noona.app/en/fruitsdemersro/reserve?iframe=true&amp;darkModeDisabled=true&amp;showCancelButton=true"
+              loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -205,6 +221,6 @@
   </div>
 </div>
 
-<script src="script.js?v=9"></script>
+<script src="script.js?v=10"></script>
 </body>
 </html>

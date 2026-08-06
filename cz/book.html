@@ -40,7 +40,7 @@
   </nav>
   <div class="topbar__actions">
     <div class="lang-switch" aria-label="Jazyk"><a class="lang-switch__opt" href="/book">EN</a><span class="lang-switch__sep">/</span><span class="lang-switch__opt is-active">CZ</span></div>
-    <a href="#book-a-table" class="btn btn--sm topbar__cta">Rezervovat stůl</a>
+    <a href="#book-a-table" class="btn btn--sm topbar__cta" data-booking>Rezervovat stůl</a>
   </div>
   <button class="topbar__burger" type="button" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
 </header>
@@ -54,13 +54,13 @@
 <main>
 
   <section class="page-hero page-hero--image">
-    <div class="page-hero__bg" style="background-image:url(/images/about-header-img.jpg); background-position: center;"></div>
+    <div class="page-hero__bg" style="background-image:url(/images/hero-book-kitchen.jpg); background-position: center;"></div>
     <div class="wrap">
       <p class="page-hero__eyebrow">Sekce 01 · Rezervace</p>
       <h1 class="page-hero__title">Večer, který stojí za rezervaci</h1>
       <p class="page-hero__lede">Komorní prostor ve Starém Městě pro ústřice, sladkovodní ryby a šampaňské. Rezervujte si stůl na oběd nebo večeři od úterý do soboty.</p>
       <div class="page-hero__cta" style="margin-top:1.6rem;">
-        <a href="#book-a-table" class="btn">Rezervovat stůl</a>
+        <a href="#book-a-table" class="btn" data-booking>Rezervovat stůl</a>
       </div>
     </div>
   </section>
@@ -85,7 +85,7 @@
             <p>Pro oběd nebo večeři od úterý do soboty použijte online rezervační widget. Speciální přání, alergie nebo poznámku k usazení přidejte přímo do rezervace.</p>
             <p class="mt-2">Pro skupiny sedmi a více osob se podívejte na <a href="/cz/private-dining">soukromé večeře</a>.</p>
             <div class="mt-3">
-              <a href="https://www.restu.cz/en/widget-beta/?source=https%3A%2F%2Foyster-river-prague.netlify.app&amp;restaurant_id=17806" target="_blank" rel="noopener" class="btn">Otevřít rezervační systém</a>
+              <a href="https://noona.app/cs/fruitsdemersro/reserve" target="_blank" rel="noopener" class="btn" data-booking>Otevřít rezervační systém</a>
             </div>
           </div>
           <aside class="callout">
@@ -129,11 +129,27 @@
   <section class="cta-strip">
     <div class="wrap">
       <h2>Večer, který stojí za rezervaci</h2>
-      <a href="#book-a-table" class="btn">Rezervovat stůl</a>
+      <a href="#book-a-table" class="btn" data-booking>Rezervovat stůl</a>
     </div>
   </section>
 
 </main>
+
+<!-- Rezervační modal — widget Noona. src doplní script.js až při otevření. -->
+<div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <h2 class="modal__title" id="bookingModalTitle">Rezervovat stůl</h2>
+      <button class="modal__close" type="button" aria-label="Zavřít" data-close>&times;</button>
+    </div>
+    <div class="modal__body">
+      <iframe title="Rezervace — River &amp; Oyster"
+              data-src="https://noona.app/cs/fruitsdemersro/reserve?iframe=true&amp;darkModeDisabled=true&amp;showCancelButton=true"
+              loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -180,6 +196,6 @@
   </div>
 </div>
 
-<script src="/script.js?v=9"></script>
+<script src="/script.js?v=10"></script>
 </body>
 </html>

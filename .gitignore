@@ -6,3 +6,6 @@ package-lock.json
 # OS / editor
 .DS_Store
 Thumbs.db
+
+# WeTransfer dropoffs — optimised copies live in images/
+images/wetransfer_*/
