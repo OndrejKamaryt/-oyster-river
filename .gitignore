@@ -9,3 +9,6 @@ Thumbs.db
 
 # WeTransfer dropoffs — optimised copies live in images/
 images/wetransfer_*/
+
+# raw photo drops - optimised copies live in images/hero-*.jpg
+images/PHOTO-*.jpg
