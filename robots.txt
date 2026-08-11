@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Content editor - nothing to index here
+Disallow: /admin/
+
+Sitemap: https://oysters.cz/sitemap.xml
