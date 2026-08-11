@@ -2,6 +2,48 @@
   'use strict';
 
   /* ============================================================
+     BOOKING MODAL (Noona widget) — runs on every page
+     Must stay ABOVE the homepage branch: that branch returns early,
+     and the constellation's Book star opens this modal too.
+     Any [data-booking] element opens it. Those elements keep a real
+     href to the booking page, so the flow still works with JS off —
+     we just take over the click.
+     ============================================================ */
+  var bModal = document.getElementById('bookingModal');
+  if (bModal) {
+    var bFrame = bModal.querySelector('iframe');
+    var bReturn = null;
+
+    var bookingOpen = function (e) {
+      if (e) e.preventDefault();
+      bReturn = document.activeElement;
+      // third-party frame is fetched on first open, not on page load
+      if (bFrame && !bFrame.getAttribute('src') && bFrame.getAttribute('data-src')) {
+        bFrame.setAttribute('src', bFrame.getAttribute('data-src'));
+      }
+      bModal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      var c = bModal.querySelector('.modal__close');
+      if (c) c.focus();
+    };
+    var bookingClose = function () {
+      bModal.hidden = true;
+      document.body.style.overflow = '';
+      if (bReturn && bReturn.focus) bReturn.focus();
+    };
+
+    Array.prototype.forEach.call(document.querySelectorAll('[data-booking]'), function (el) {
+      el.addEventListener('click', bookingOpen);
+    });
+    Array.prototype.forEach.call(bModal.querySelectorAll('[data-close]'), function (el) {
+      el.addEventListener('click', bookingClose);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !bModal.hidden) bookingClose();
+    });
+  }
+
+  /* ============================================================
      HOMEPAGE — Pleiades constellation (no intro, instant entry)
      ============================================================ */
   if (document.body.classList.contains('home')) {
@@ -104,41 +146,4 @@
   }
   if (cookiesAccept) cookiesAccept.addEventListener('click', function () { setCookieChoice('accepted'); });
   if (cookiesDecline) cookiesDecline.addEventListener('click', function () { setCookieChoice('declined'); });
-
-  // — Booking modal (Noona widget) —
-  // Any [data-booking] element opens it. Those elements keep a real href to the
-  // booking page, so the flow still works with JS off — we just take over the click.
-  var bModal = document.getElementById('bookingModal');
-  if (bModal) {
-    var bFrame = bModal.querySelector('iframe');
-    var bReturn = null;
-
-    function bookingOpen(e) {
-      if (e) e.preventDefault();
-      bReturn = document.activeElement;
-      // third-party frame is fetched on first open, not on page load
-      if (bFrame && !bFrame.getAttribute('src') && bFrame.getAttribute('data-src')) {
-        bFrame.setAttribute('src', bFrame.getAttribute('data-src'));
-      }
-      bModal.hidden = false;
-      document.body.style.overflow = 'hidden';
-      var c = bModal.querySelector('.modal__close');
-      if (c) c.focus();
-    }
-    function bookingClose() {
-      bModal.hidden = true;
-      document.body.style.overflow = '';
-      if (bReturn && bReturn.focus) bReturn.focus();
-    }
-
-    Array.prototype.forEach.call(document.querySelectorAll('[data-booking]'), function (el) {
-      el.addEventListener('click', bookingOpen);
-    });
-    Array.prototype.forEach.call(bModal.querySelectorAll('[data-close]'), function (el) {
-      el.addEventListener('click', bookingClose);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !bModal.hidden) bookingClose();
-    });
-  }
 })();

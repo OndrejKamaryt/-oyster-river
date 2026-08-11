@@ -21,12 +21,12 @@
 <meta property="og:title" content="River &amp; Oyster - Fine dining in Prague">
 <meta property="og:description" content="River & Oyster - a modern restaurant for oysters, river fish, champagne and precise seasonal cooking in the heart of Prague's Old Town.">
 <meta property="og:url" content="https://oyster-river-prague.netlify.app/">
-<meta property="og:image" content="https://oyster-river-prague.netlify.app/images/galerie-header-img.jpg">
+<meta property="og:image" content="https://oyster-river-prague.netlify.app/images/og-brand.jpg">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="River &amp; Oyster - Fine dining in Prague">
 <meta name="twitter:description" content="River & Oyster - a modern restaurant for oysters, river fish, champagne and precise seasonal cooking in the heart of Prague's Old Town.">
-<meta name="twitter:image" content="https://oyster-river-prague.netlify.app/images/galerie-header-img.jpg">
+<meta name="twitter:image" content="https://oyster-river-prague.netlify.app/images/og-brand.jpg">
 <link rel="canonical" href="https://oyster-river-prague.netlify.app/">
 </head>
 <body class="home">
@@ -117,7 +117,7 @@
         <text class="p-label-sub" x="233" y="404" text-anchor="end">Wine · champagne</text>
       </a>
 
-      <a href="/book" class="p-star" data-name="Book">
+      <a href="/book" class="p-star" data-name="Book" data-booking>
         <circle class="p-star-halo" cx="430" cy="410" r="13"/>
         <circle class="p-star-core" cx="430" cy="410" r="4.2"/>
         <circle class="p-star-hit"  cx="430" cy="410" r="34"/>
@@ -151,7 +151,23 @@
   </div>
 </div>
 
-<script src="script.js?v=10"></script>
+<!-- Booking modal - Noona widget. src is set by script.js on first open. -->
+<div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <h2 class="modal__title" id="bookingModalTitle">Book a table</h2>
+      <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
+    </div>
+    <div class="modal__body">
+      <iframe title="Reservation - River &amp; Oyster"
+              data-src="https://noona.app/en/fruitsdemersro/reserve?iframe=true&amp;darkModeDisabled=true&amp;showCancelButton=true"
+              loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="script.js?v=11"></script>
 <!-- Netlify Identity - zpracuje odkaz z pozvánky/obnovy hesla a přesměruje do /admin/ -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
