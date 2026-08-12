@@ -485,7 +485,11 @@ body.home .home-footer > div:first-child { color: var(--c-champagne); letter-spa
     padding: 0 1.4rem;
     flex-direction: column;
     gap: 0.5rem;
-    padding-bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+    /* Sits well clear of Safari's bottom bar, which overlays the page in
+       portrait rather than shortening it - svh does not fully account for it,
+       so the last line kept getting shaved. There is a large empty gap above
+       the footer in portrait anyway, so the lift costs nothing visually. */
+    padding-bottom: calc(3.6rem + env(safe-area-inset-bottom, 0px));
     text-align: center;
   }
 }
