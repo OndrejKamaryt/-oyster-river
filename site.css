@@ -238,14 +238,15 @@ body.home {
      so there is nothing left to disagree. */
   position: relative;
   width: 100%;
-  /* svh, not dvh: svh is the viewport with the browser chrome SHOWN - the part
-     that is visible in every state. dvh is whatever is visible right now, so
-     when Safari had its bars retracted at layout time the box came out taller
-     than the area you can actually see and the footer fell off the bottom
-     (landscape) or slid under the bottom bar (portrait). Sizing to svh costs a
-     little slack when the chrome retracts, but nothing is ever cut off. */
+  /* The footer is no longer pinned to an edge - it is the last item of a flex
+     column and therefore RESERVES its own space, with the stage taking what is
+     left. Anchoring it to the bottom kept failing on iOS whichever viewport
+     unit was used, because Safari's bottom bar overlays the page rather than
+     shortening it. A flow element cannot be overlapped by the layout above it. */
   height: 100vh;
   height: 100svh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -308,8 +309,9 @@ body.home .brand-mark img.brand-logo {
 
 /* Constellation stage */
 body.home .stage {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -421,10 +423,11 @@ body.home .p-star.is-hover .p-label-sub {
 
 /* Home utility footer */
 body.home .home-footer {
-  position: absolute;
-  bottom: calc(1.8rem + env(safe-area-inset-bottom, 0px));
-  left: 0; right: 0;
+  position: relative;
+  flex: 0 0 auto;
   z-index: 3;
+  padding-bottom: calc(1.8rem + env(safe-area-inset-bottom, 0px));
+  padding-top: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -475,7 +478,7 @@ body.home .home-footer > div:first-child { color: var(--c-champagne); letter-spa
     padding: 0 1.4rem;
     flex-direction: column;
     gap: 0.5rem;
-    bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
     text-align: center;
   }
 }
@@ -1645,7 +1648,7 @@ body.soon {
   body.home .brand-mark { top: 0.9rem; left: 1rem; }
   body.home .brand-mark img.brand-logo { height: 26px; }
   body.home .lang-switch--home { top: 0.9rem; right: 1rem; }
-  body.home .home-footer { font-size: 8px; bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px)); gap: 0.3rem; }
+  body.home .home-footer { font-size: 8px; padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px)); padding-top: 0.4rem; gap: 0.3rem; }
 }
 
 /* Czech labels are longer than the English ones ("Objevujte" vs "Discover"),
