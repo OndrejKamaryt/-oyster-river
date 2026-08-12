@@ -228,7 +228,14 @@ h1, h2, h3, h4, h5, h6,
 body.home {
   position: fixed;
   width: 100%;
+  /* 100% on a fixed element resolves against the LARGE viewport - i.e. as if the
+     browser chrome were retracted. On iOS landscape, with the URL bar and tab
+     strip showing, that box is far taller than what you can actually see: the
+     stage centred the cluster inside it (cropping the bottom star) while the
+     fixed footer stayed pinned to the real bottom, landing mid-constellation.
+     dvh tracks the visible area, so both agree again. */
   height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -1613,8 +1620,8 @@ body.soon {
 /* Constellation on landscape phones — the viewport is too short for the
    cluster to sit between the brand mark and the footer, so it used to
    overlap both. Pad the stage and let the SVG scale to the free height. */
-@media (max-height: 560px) and (orientation: landscape) {
-  body.home .stage { padding: 3.6rem 1rem 3rem; }
+@media (max-height: 620px) and (orientation: landscape) {
+  body.home .stage { padding: 3.2rem 1rem 3.4rem; }
   body.home .pleiades {
     width: auto;
     height: 100%;
