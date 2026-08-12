@@ -1678,3 +1678,10 @@ body.soon {
 @media (max-width: 480px) {
   html[lang="cs"] body.home .p-label { font-size: 20px; }
 }
+
+/* Opening soon -> the site. The landing is a notice, not a dead end. */
+.soon__cta { margin: 0 0 2.4rem; }
+@media (max-height: 560px) and (orientation: landscape) {
+  .soon__cta { margin-bottom: 1.1rem; }
+  .soon__cta .btn { padding: 0.75rem 1.9rem; font-size: 9px; }
+}
