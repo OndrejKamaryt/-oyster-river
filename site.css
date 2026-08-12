@@ -226,15 +226,19 @@ h1, h2, h3, h4, h5, h6,
    ========================================================= */
 
 body.home {
-  position: fixed;
+  /* ONE coordinate space for the whole screen.
+     This used to be position:fixed while .stage/.background were absolute
+     (measured against the body box) and .brand-mark/.home-footer were fixed
+     (measured against the viewport). Those two boxes are identical on desktop
+     but NOT on iOS: with Safari's URL bar and tab strip showing, the fixed
+     elements sit against the visible area while the body box is the taller
+     chrome-retracted viewport. The constellation and the footer therefore
+     disagreed by exactly the height of the browser chrome, and overlapped.
+     Now the body is the only reference and everything inside is absolute,
+     so there is nothing left to disagree. */
+  position: relative;
   width: 100%;
-  /* 100% on a fixed element resolves against the LARGE viewport - i.e. as if the
-     browser chrome were retracted. On iOS landscape, with the URL bar and tab
-     strip showing, that box is far taller than what you can actually see: the
-     stage centred the cluster inside it (cropping the bottom star) while the
-     fixed footer stayed pinned to the real bottom, landing mid-constellation.
-     dvh tracks the visible area, so both agree again. */
-  height: 100%;
+  height: 100vh;
   height: 100dvh;
   overflow: hidden;
 }
@@ -274,7 +278,7 @@ body.home .background::before {
 
 /* Brand mark — top-left identity */
 body.home .brand-mark {
-  position: fixed;
+  position: absolute;
   top: 2.2rem; left: 2.2rem;
   z-index: 4;
   opacity: 0.95;
@@ -411,7 +415,7 @@ body.home .p-star.is-hover .p-label-sub {
 
 /* Home utility footer */
 body.home .home-footer {
-  position: fixed;
+  position: absolute;
   bottom: 1.8rem;
   left: 0; right: 0;
   z-index: 3;
@@ -590,7 +594,7 @@ body.home .home-footer > div:first-child { color: var(--c-champagne); letter-spa
 a.lang-switch__opt:hover { color: var(--c-champagne); }
 .lang-switch__sep { color: var(--t-muted); opacity: 0.4; }
 .mobile-menu .lang-switch { margin-top: 1.4rem; font-size: 13px; letter-spacing: 0.28em; }
-body.home .lang-switch--home { position: fixed; top: 2.5rem; right: 2.5rem; z-index: 5; }
+body.home .lang-switch--home { position: absolute; top: 2.5rem; right: 2.5rem; z-index: 5; }
 @media (max-width: 768px) { body.home .lang-switch--home { top: 1.5rem; right: 1.4rem; } }
 
 /* Mobile menu */
