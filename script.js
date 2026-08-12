@@ -55,9 +55,16 @@
     // without changing cluster positions.
     var DESKTOP_VB = '78 110 700 360';
     var MOBILE_VB  = '130 40 600 480';
+    // Czech labels are longer than the English ones, and "Objevujte" is the
+    // right-most element - with the English viewBox it ended flush against the
+    // screen edge. A wider box buys it margin; the label size is raised to match
+    // so the rendered text stays the size it was signed off at.
+    var MOBILE_VB_CS = '112 40 665 480';
     function reframePleiades() {
       if (!pleiades) return;
-      pleiades.setAttribute('viewBox', window.innerWidth <= 768 ? MOBILE_VB : DESKTOP_VB);
+      var cs = document.documentElement.lang === 'cs';
+      pleiades.setAttribute('viewBox',
+        window.innerWidth <= 768 ? (cs ? MOBILE_VB_CS : MOBILE_VB) : DESKTOP_VB);
     }
     reframePleiades();
     window.addEventListener('resize', reframePleiades);

@@ -4,7 +4,13 @@
    layered backgrounds, hairline metallics, muted text hierarchy.
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Theano+Didot&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400;500&display=swap');
+/* Cormorant Garamond is requested WITH its italics (ital,wght). The site sets
+   font-style: italic in nine places; without the real italic cut the browser
+   fakes one by slanting the upright face, which knocks the Czech carons
+   (ř, ě, č, ň, š, ž) off their letters. Theano Didot is deliberately absent:
+   Google Fonts no longer serves that family, so it was silently dropped from
+   every response and only the fallback ever rendered. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@200;300;400;500&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -901,10 +907,13 @@ body.home .lang-switch--home { position: fixed; top: 2.5rem; right: 2.5rem; z-in
   font-weight: 400;
   line-height: 1.4;
   color: var(--t-display);
-  max-width: 28ch;
+  max-width: 30ch;
   margin: 5rem auto;
   text-align: center;
   position: relative;
+  /* let the browser even out the lines instead of a hard-coded <br>, which
+     produced a stray third line once the first half wrapped on its own */
+  text-wrap: balance;
 }
 .pullquote::before, .pullquote::after {
   content: '';
@@ -1501,4 +1510,131 @@ body.home .lang-switch--home { position: fixed; top: 2.5rem; right: 2.5rem; z-in
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* =========================================================
+   OPENING SOON — pre-launch landing that replaces the homepage
+   Single centred column; sized off dynamic viewport units so it
+   also survives landscape phones, where the constellation did not.
+   ========================================================= */
+body.soon {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  overflow-x: hidden;
+}
+.soon__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 34rem;
+  width: 100%;
+}
+.soon__logo {
+  height: 74px;
+  width: auto;
+  margin: 0 auto 2.6rem;
+  filter: brightness(0) invert(1) sepia(0.18) hue-rotate(-12deg) brightness(1.1) contrast(0.9);
+  opacity: 0.94;
+}
+.soon__eyebrow {
+  font-family: var(--f-body);
+  font-size: 10px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--c-champagne);
+  margin-bottom: 1.4rem;
+}
+.soon__title {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  line-height: 1.1;
+  color: var(--t-display);
+  margin-bottom: 1.2rem;
+  text-wrap: balance;
+}
+.soon__lede {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2.4vw, 1.18rem);
+  line-height: 1.55;
+  color: var(--t-body);
+  max-width: 30ch;
+  margin: 0 auto 2.6rem;
+  text-wrap: balance;
+}
+.soon__rule {
+  width: 1px; height: 44px;
+  background: linear-gradient(180deg, transparent, var(--line-strong), transparent);
+  margin: 0 auto 2.4rem;
+}
+.soon__meta {
+  font-family: var(--f-body);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t-muted);
+  line-height: 2.1;
+}
+.soon__meta a { color: var(--t-body); }
+.soon__meta a:hover { color: var(--c-champagne); }
+.soon__lang {
+  position: fixed;
+  top: 1.6rem; right: 1.6rem;
+  z-index: 5;
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: var(--t-muted);
+}
+.soon__lang .is-active { color: var(--t-display); }
+.soon__lang a:hover { color: var(--c-champagne); }
+
+/* Landscape phones — short viewport, so trim the vertical rhythm */
+@media (max-height: 560px) and (orientation: landscape) {
+  body.soon { padding: 1.5rem; justify-content: center; }
+  .soon__logo { height: 46px; margin-bottom: 1.2rem; }
+  .soon__eyebrow { margin-bottom: 0.7rem; }
+  .soon__title { font-size: clamp(1.5rem, 4.4vh, 2.1rem); margin-bottom: 0.6rem; }
+  .soon__lede { font-size: 0.95rem; margin-bottom: 1.1rem; }
+  .soon__rule { height: 22px; margin-bottom: 1.1rem; }
+  .soon__meta { font-size: 10.5px; line-height: 1.9; }
+}
+@media (max-width: 480px) {
+  .soon__logo { height: 58px; margin-bottom: 2rem; }
+  .soon__meta { font-size: 11px; letter-spacing: 0.13em; }
+}
+
+/* Constellation on landscape phones — the viewport is too short for the
+   cluster to sit between the brand mark and the footer, so it used to
+   overlap both. Pad the stage and let the SVG scale to the free height. */
+@media (max-height: 560px) and (orientation: landscape) {
+  body.home .stage { padding: 3.6rem 1rem 3rem; }
+  body.home .pleiades {
+    width: auto;
+    height: 100%;
+    max-width: 96vw;
+    max-height: 100%;
+    transform: none;
+  }
+  body.home .p-label { font-size: 17px; }
+  body.home .p-label-sub { display: none; }
+  body.home .brand-mark { top: 0.9rem; left: 1rem; }
+  body.home .brand-mark img.brand-logo { height: 26px; }
+  body.home .lang-switch--home { top: 0.9rem; right: 1rem; }
+  body.home .home-footer { font-size: 8px; bottom: 0.5rem; gap: 0.3rem; }
+}
+
+/* Czech labels are longer than the English ones ("Objevujte" vs "Discover"),
+   so on narrow portrait screens they ran past the right edge. */
+@media (max-width: 768px) {
+  html[lang="cs"] body.home .p-label { font-size: 21px; }
+}
+@media (max-width: 480px) {
+  html[lang="cs"] body.home .p-label { font-size: 20px; }
 }
