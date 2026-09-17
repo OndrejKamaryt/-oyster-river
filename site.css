@@ -1633,8 +1633,9 @@ body.soon {
   .soon__logo { height: 46px; margin-bottom: 1.2rem; }
   .soon__eyebrow { margin-bottom: 0.7rem; }
   .soon__title { font-size: clamp(1.5rem, 4.4vh, 2.1rem); margin-bottom: 0.6rem; }
-  .soon__lede { font-size: 0.95rem; margin-bottom: 1.1rem; }
-  .soon__rule { height: 22px; margin-bottom: 1.1rem; }
+  /* landscape has width to spare - let the lede run wide instead of stacking 4 lines */
+  .soon__lede { font-size: 0.95rem; margin-bottom: 1.1rem; max-width: 58ch; }
+  .soon__rule { display: none; }   /* decorative hairline - no room for it here */
   .soon__meta { font-size: 10.5px; line-height: 1.9; }
 }
 @media (max-width: 480px) {
