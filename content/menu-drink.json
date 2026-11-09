@@ -14,7 +14,7 @@
     { "cs_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "en_name": "Ernest Remy Brut BDN, Grand Cru, N.V.", "cs_desc": "0,1 l sklenka", "en_desc": "0.1 l glass", "price": "490" }
   ],
   "classics": [
-    { "name": "White Negroni", "style_cs": "", "style_en": "", "ing_cs": "Gin Tanqueray N 10 • Suze • Dolin Blanc Vermouth de Chambéry • bílá broskev", "ing_en": "Tanqueray No. Ten gin • Suze • Dolin Blanc Vermouth de Chambéry • white peach", "price": "345" },
+    { "name": "White Negroni", "style_cs": "", "style_en": "", "ing_cs": "Gin • Suze • Dolin Blanc Vermouth de Chambéry • bílá broskev", "ing_en": "Gin • Suze • Dolin Blanc Vermouth de Chambéry • white peach", "price": "345" },
     { "name": "Negroni", "style_cs": "", "style_en": "", "ing_cs": "Garage 22 Summer gin • Dolin Rouge Vermouth de Chambéry • Campari • jahody • černý čaj", "ing_en": "Garage 22 Summer gin • Dolin Rouge Vermouth de Chambéry • Campari • strawberry • black tea", "price": "345" },
     { "name": "Espresso Martini", "style_cs": "", "style_en": "", "ing_cs": "Beluga vodka • Gloria Single Origin Coffee liqueur • espresso • Marlenka", "ing_en": "Beluga vodka • Gloria Single Origin Coffee liqueur • espresso • Marlenka honey cake", "price": "345" },
     { "name": "Pickled Martini", "style_cs": "", "style_en": "", "ing_cs": "fat washed gin • kořeněný infuzovaný vermut • solný roztok • nálev z nakládané zeleniny • cibulka", "ing_en": "fat washed gin • infused spiced vermouth • saline solution • pickled juice • onion", "price": "345" }
@@ -22,7 +22,74 @@
   "cocktails": [
     { "name": "Umi 海", "style_cs": "Osvěžující · lehký · návykový", "style_en": "Long · fresh · light", "ing_cs": "Garage 22 River & Oyster gin • angrešt • hrozno • gyokuro • kombu řasa", "ing_en": "Garage 22 River & Oyster gin • gooseberry • grapes • gyokuro • kombu seaweed", "price": "345" },
     { "name": "Ringo りんご", "style_cs": "Plný · tělnatý · sladký", "style_en": "Short · sweet · bold", "ing_cs": "Jamajský rum 12y omytý máslem • sirup z kvásku a jablek • vlašský ořech", "ing_en": "Butter-washed Jamaican rum 12y • apple-sourdough syrup • walnut", "price": "345" },
-    { "name": "Inaka 田舎", "style_cs": "Ovocné · sladkokyselé · svěží", "style_en": "Fruity · sweet-sour · fresh", "ing_cs": "Malinová vodka • jahoda • bezinkový likér • limeta • sirup ze slaměnky • mléčná syrovátka", "ing_en": "Raspberry vodka • strawberry • elderflower liqueur • lime • immortelle syrup • milk whey", "price": "345" },
-    { "name": "Kaju-en 果樹園", "style_cs": "Nealkoholický · aperitivní", "style_en": "Non-alcoholic · aperitif", "ing_cs": "Pai Mu Tan • meruňka • náš nealkoholický vermut • oleo saccharum • verjus", "ing_en": "Pai Mu Tan • apricot syrup • house non-alcoholic vermouth • oleo saccharum • verjus", "price": "345" }
+    { "name": "Inaka 田舎", "style_cs": "Ovocné · sladkokyselé · svěží", "style_en": "Fruity · sweet-sour · fresh", "ing_cs": "Vodka • jahoda • bezinkový likér • limeta • sirup ze slaměnky • mléčná syrovátka", "ing_en": "Vodka • strawberry • elderflower liqueur • lime • immortelle syrup • milk whey", "price": "345" },
+    { "name": "Kadžuen 果樹園", "style_cs": "Nealkoholický · aperitivní · perlivý", "style_en": "Non-alcoholic · aperitif · sparkling", "ing_cs": "Pai Mu Tan • meruňka • náš nealkoholický vermut • oleo saccharum • verjus", "ing_en": "Pai Mu Tan • apricot • house non-alcoholic vermouth • oleo saccharum • verjus", "price": "345" }
+  ],
+  "spirits_vodka": [
+    { "cs_name": "Beluga Transatlantic Racing", "en_name": "Beluga Transatlantic Racing", "cs_desc": "40 %", "en_desc": "40 %", "price": "165" },
+    { "cs_name": "Beluga Gold Line", "en_name": "Beluga Gold Line", "cs_desc": "40 %", "en_desc": "40 %", "price": "195" }
+  ],
+  "spirits_gin": [
+    { "cs_name": "Garage 22 River & Oyster Gin", "en_name": "Garage 22 River & Oyster Gin", "cs_desc": "42 % · domácí gin", "en_desc": "42 % · house gin", "price": "195" },
+    { "cs_name": "Ki No Bi Kyoto Dry Gin", "en_name": "Ki No Bi Kyoto Dry Gin", "cs_desc": "45,7 %", "en_desc": "45.7 %", "price": "195" }
+  ],
+  "spirits_rum": [
+    { "cs_name": "Appleton Estate 21", "en_name": "Appleton Estate 21", "cs_desc": "", "en_desc": "", "price": "479" },
+    { "cs_name": "A.H. Riise Signature", "en_name": "A.H. Riise Signature", "cs_desc": "", "en_desc": "", "price": "589" },
+    { "cs_name": "Zafra 30", "en_name": "Zafra 30", "cs_desc": "", "en_desc": "", "price": "689" }
+  ],
+  "spirits_tequila": [
+    { "cs_name": "Clase Azul", "en_name": "Clase Azul", "cs_desc": "", "en_desc": "", "price": "489" },
+    { "cs_name": "Del Maguey Chichicapa", "en_name": "Del Maguey Chichicapa", "cs_desc": "48 %", "en_desc": "48 %", "price": "348" }
+  ],
+  "spirits_whisky": [
+    { "cs_name": "The Dalmore Cigar Malt", "en_name": "The Dalmore Cigar Malt", "cs_desc": "", "en_desc": "", "price": "429" },
+    { "cs_name": "The Macallan 18 Years Sherry Oak", "en_name": "The Macallan 18 Years Sherry Oak", "cs_desc": "", "en_desc": "", "price": "1 800" },
+    { "cs_name": "Michter's 10 Y.O. Kentucky Straight Bourbon 3XO", "en_name": "Michter's 10 Y.O. Kentucky Straight Bourbon 3XO", "cs_desc": "47,2 %", "en_desc": "47.2 %", "price": "569" },
+    { "cs_name": "The Nikka Tailored", "en_name": "The Nikka Tailored", "cs_desc": "43 %", "en_desc": "43 %", "price": "469" }
+  ],
+  "spirits_cognac": [
+    { "cs_name": "Bache Gabrielsen Serenité", "en_name": "Bache Gabrielsen Serenité", "cs_desc": "", "en_desc": "", "price": "569" },
+    { "cs_name": "Bache Gabrielsen Hors d'Age", "en_name": "Bache Gabrielsen Hors d'Age", "cs_desc": "", "en_desc": "", "price": "899" },
+    { "cs_name": "Dupuy XXO", "en_name": "Dupuy XXO", "cs_desc": "", "en_desc": "", "price": "989" }
+  ],
+  "spirits_montilla": [
+    { "cs_name": "Toro Albalá Don PX Convento Selección 1955", "en_name": "Toro Albalá Don PX Convento Selección 1955", "cs_desc": "", "en_desc": "", "price": "989" },
+    { "cs_name": "Cherry Bache Gabrielsen Very Old", "en_name": "Cherry Bache Gabrielsen Very Old", "cs_desc": "", "en_desc": "", "price": "199" }
+  ],
+  "spirits_ratafia": [
+    { "cs_name": "Henri Giraud Ratafia Solera 90/19", "en_name": "Henri Giraud Ratafia Solera 90/19", "cs_desc": "17 %", "en_desc": "17 %", "price": "489" }
+  ],
+  "spirits_fruit": [
+    { "cs_name": "Raspenava malinovice", "en_name": "Raspenava malinovice", "cs_desc": "", "en_desc": "raspberry eau-de-vie", "price": "180" },
+    { "cs_name": "Raspenava meruňkovice", "en_name": "Raspenava meruňkovice", "cs_desc": "ze sudu po champagne", "en_desc": "apricot eau-de-vie · ex-champagne cask", "price": "190" }
+  ],
+  "soft_drinks": [
+    { "cs_name": "Balbin", "en_name": "Balbin", "cs_desc": "neperlivá voda · 0,75 l", "en_desc": "still water · 0.75 l", "price": "165" },
+    { "cs_name": "Vichy Catalan", "en_name": "Vichy Catalan", "cs_desc": "perlivá voda · 1 l", "en_desc": "sparkling water · 1 l", "price": "165" },
+    { "cs_name": "Coca-Cola", "en_name": "Coca-Cola", "cs_desc": "0,2 l", "en_desc": "0.2 l", "price": "95" },
+    { "cs_name": "Domácí tonik", "en_name": "House tonic", "cs_desc": "0,3 l", "en_desc": "0.3 l", "price": "125" },
+    { "cs_name": "Domácí limonáda", "en_name": "House lemonade", "cs_desc": "0,3 l", "en_desc": "0.3 l", "price": "105" }
+  ],
+  "beer": [
+    { "cs_name": "Pilsner Urquell", "en_name": "Pilsner Urquell", "cs_desc": "0,33 l", "en_desc": "0.33 l", "price": "125" }
+  ],
+  "coffee": [
+    { "cs_name": "Espresso", "en_name": "Espresso", "cs_desc": "", "en_desc": "", "price": "85" },
+    { "cs_name": "Espresso lungo", "en_name": "Espresso lungo", "cs_desc": "", "en_desc": "", "price": "85" },
+    { "cs_name": "Espresso doppio", "en_name": "Espresso doppio", "cs_desc": "", "en_desc": "", "price": "95" },
+    { "cs_name": "Americano", "en_name": "Americano", "cs_desc": "", "en_desc": "", "price": "85" },
+    { "cs_name": "Espresso macchiato", "en_name": "Espresso macchiato", "cs_desc": "", "en_desc": "", "price": "95" },
+    { "cs_name": "Cappuccino", "en_name": "Cappuccino", "cs_desc": "", "en_desc": "", "price": "95" },
+    { "cs_name": "Cortado", "en_name": "Cortado", "cs_desc": "", "en_desc": "", "price": "115" },
+    { "cs_name": "Flat white", "en_name": "Flat white", "cs_desc": "", "en_desc": "", "price": "125" },
+    { "cs_name": "Caffè latte", "en_name": "Caffè latte", "cs_desc": "", "en_desc": "", "price": "105" }
+  ],
+  "tea": [
+    { "cs_name": "Kapkoros Silver Tips", "en_name": "Kapkoros Silver Tips", "cs_desc": "", "en_desc": "", "price": "170" },
+    { "cs_name": "En Shi Yu Lu „Vzácná rosa“", "en_name": "En Shi Yu Lu \"Precious Dew\"", "cs_desc": "", "en_desc": "", "price": "135" },
+    { "cs_name": "Sencha Miyazaki", "en_name": "Sencha Miyazaki", "cs_desc": "", "en_desc": "", "price": "175" },
+    { "cs_name": "Keemun (Anhua)", "en_name": "Keemun (Anhua)", "cs_desc": "", "en_desc": "", "price": "110" },
+    { "cs_name": "Síla českých bylin", "en_name": "Czech herbal blend", "cs_desc": "", "en_desc": "", "price": "100" }
   ]
 }

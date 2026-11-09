@@ -26,6 +26,13 @@ const DRINK_SECTIONS = {
   wine_white: { marker: 'wine_white' }, wine_red: { marker: 'wine_red' }, champagne: { id: 'champagne' },
   classics: { marker: 'classics', kind: 'cocktail' },
   cocktails: { marker: 'cocktails', kind: 'cocktail' },
+  spirits_vodka: { marker: 'spirits_vodka' }, spirits_gin: { marker: 'spirits_gin' },
+  spirits_rum: { marker: 'spirits_rum' }, spirits_tequila: { marker: 'spirits_tequila' },
+  spirits_whisky: { marker: 'spirits_whisky' }, spirits_cognac: { marker: 'spirits_cognac' },
+  spirits_montilla: { marker: 'spirits_montilla' }, spirits_ratafia: { marker: 'spirits_ratafia' },
+  spirits_fruit: { marker: 'spirits_fruit' },
+  soft_drinks: { marker: 'soft_drinks' }, beer: { marker: 'beer' },
+  coffee: { marker: 'coffee' }, tea: { marker: 'tea' },
 };
 
 const JOBS = [

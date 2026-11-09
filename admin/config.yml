@@ -47,7 +47,7 @@ collections:
         label: 'Nápoje - menu'
         file: 'content/menu-drink.json'
         format: json
-        description: 'Víno a champagne po sklenkách + signature koktejly. Cena jen číslem.'
+        description: 'Víno a champagne po sklenkách, koktejly, destiláty a nealko. Cena jen číslem. U destilátů patří procenta do popisu, ne do názvu.'
         fields:
           - { label: 'Víno - bílé po sklenkách', name: wine_white, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
           - { label: 'Víno - červené & rosé po sklenkách', name: wine_red, widget: list, label_singular: 'víno', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
@@ -77,3 +77,17 @@ collections:
               - { label: 'Ingredience (CZ, oddělovač •)', name: ing_cs, widget: string }
               - { label: 'Ingredients (EN, separator •)', name: ing_en, widget: string }
               - { label: 'Cena (jen číslo)', name: price, widget: string, required: false }
+
+          - { label: 'Destiláty - vodka', name: spirits_vodka, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - gin', name: spirits_gin, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - rum', name: spirits_rum, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - tequila & mezcal', name: spirits_tequila, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - whisky', name: spirits_whisky, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - koniak', name: spirits_cognac, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - Montilla-Moriles', name: spirits_montilla, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - ratafia', name: spirits_ratafia, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Destiláty - ovocné pálenky', name: spirits_fruit, widget: list, label_singular: 'destilát', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Nealko', name: soft_drinks, widget: list, label_singular: 'nápoj', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Pivo', name: beer, widget: list, label_singular: 'pivo', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Káva', name: coffee, widget: list, label_singular: 'káva', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
+          - { label: 'Čaj', name: tea, widget: list, label_singular: 'čaj', summary: '{{fields.cs_name}} - {{fields.price}}', fields: *item_fields }
