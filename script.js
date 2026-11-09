@@ -14,11 +14,28 @@
     var bFrame = bModal.querySelector('iframe');
     var bReturn = null;
 
+    // Noona answers in a few seconds. Without this the panel sits blank
+    // white in the meantime, which reads as a dead reservation link.
+    var bookingLoader = function () {
+      var body = bModal.querySelector('.modal__body');
+      if (!body || !bFrame || body.querySelector('.modal__loading')) return;
+      var cs = (document.documentElement.getAttribute('lang') || 'en').indexOf('cs') === 0;
+      var note = document.createElement('p');
+      note.className = 'modal__loading';
+      note.textContent = cs ? 'Načítáme rezervační formulář…' : 'Loading the booking form…';
+      body.appendChild(note);
+      var done = function () { if (note.parentNode) note.parentNode.removeChild(note); };
+      bFrame.addEventListener('load', done);
+      bFrame.addEventListener('error', done);
+      setTimeout(done, 15000);
+    };
+
     var bookingOpen = function (e) {
       if (e) e.preventDefault();
       bReturn = document.activeElement;
       // third-party frame is fetched on first open, not on page load
       if (bFrame && !bFrame.getAttribute('src') && bFrame.getAttribute('data-src')) {
+        bookingLoader();
         bFrame.setAttribute('src', bFrame.getAttribute('data-src'));
       }
       bModal.hidden = false;

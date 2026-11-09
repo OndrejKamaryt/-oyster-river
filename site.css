@@ -1506,9 +1506,24 @@ body.home .lang-switch--home { position: absolute; top: 2.5rem; right: 2.5rem; z
 .modal__close:hover,
 .modal__close:focus-visible { opacity: 1; }
 .modal__body {
+  position: relative;
   flex: 1;
   min-height: 0;
   background: #fff;
+}
+.modal__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+  color: #5a6475;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
 }
 .modal__body iframe {
   display: block;
