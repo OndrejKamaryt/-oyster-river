@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Netlify Identity posílá odkazy z pozvánky i z obnovy hesla na kořen webu, kde je tahle
+     stránka „brzy otevíráme“ bez widgetu — token proto předáme na /admin/, který ho zpracuje. -->
+<script>
+(function () {
+  function hand() {
+    var h = window.location.hash;
+    if (/(recovery_token|invite_token|confirmation_token|email_change_token)=/.test(h)) {
+      window.location.replace('/admin/' + h);
+    }
+  }
+  hand();
+  // Když už má někdo stránku otevřenou, změna fragmentu skript znovu nespustí.
+  window.addEventListener('hashchange', hand);
+})();
+</script>
 <title>River &amp; Oyster | Opening soon in Prague's Old Town</title>
 <meta name="description" content="An oyster bar and fine dining restaurant opening soon behind Týn Cathedral in Prague. Oysters, freshwater fish, open fire and seasonal Czech ingredients.">
 <link rel="stylesheet" href="site.css?v=42">
